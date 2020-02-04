@@ -27,9 +27,20 @@ app.get("/api/notes", function(req, res) {
 
 //* POST `/api/notes` - Should recieve a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
 app.post("/api/notes", function(req, res) {
-  //captures incoming req
+  //captures incoming req.body
   let newNote = req.body;
-  console.log(newNote);
+  console.log("newNotes: ", newNote);
+  //reads the existing db.json
+  fs.readFile("../db/db.json", "utf-8", (err, data) => {
+    if (err) throw err;
+    //parses the data out of stringified
+    let database = JSON.parse(data);
+    console.log("Parsed database: ", database);
+    //pushes newNote to update database
+    database.push(newNote);
+    console.log("Updated Database with post: ", database);
+    //write the up
+  });
 });
 
 //  * DELETE `/api/notes/:id` - Should recieve a query paramter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
