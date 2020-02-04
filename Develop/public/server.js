@@ -39,7 +39,7 @@ app.post("/api/notes", function(req, res) {
     //pushes newNote to update database
     database.push(newNote);
     console.log("Updated Database with post: ", database);
-    //write the up
+    //write the updated database var to db.json
   });
 });
 
