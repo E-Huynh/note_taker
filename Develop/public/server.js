@@ -25,7 +25,7 @@ app.get("/api/notes", function(req, res) {
   res.sendFile(path.join(__dirname, "../db/db.json"));
 });
 
-//* POST `/api/notes` - Should recieve a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
+//README* POST `/api/notes` - Should recieve a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
 app.post("/api/notes", function(req, res) {
   //captures incoming req.body
   let newNote = req.body;
@@ -39,7 +39,12 @@ app.post("/api/notes", function(req, res) {
     //pushes newNote to update database
     database.push(newNote);
     console.log("Updated Database with post: ", database);
-    //write the updated database var to db.json
+    //write the updated database var to db.json file
+    fs.writeFile("../db/db.json", JSON.stringify(database), function(err){
+      if (err) throw err;
+      //returns status and message as response
+      return res.status(200).send("Note added");
+    })
   });
 });
 
