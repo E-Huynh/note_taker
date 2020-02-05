@@ -29,13 +29,13 @@ app.get("/api/notes", function(req, res) {
 app.post("/api/notes", function(req, res) {
   //captures incoming req.body
   let newNote = req.body;
-  console.log("newNotes: ", newNote);
+  // console.log("newNotes: ", newNote);
   //reads the existing db.json
   fs.readFile("../db/db.json", "utf-8", (err, data) => {
     if (err) throw err;
     //parses the data out of stringified
     let database = JSON.parse(data);
-    console.log("Parsed database: ", database);
+    // console.log("Parsed database: ", database);
     //pushes newNote to update database
     database.push(newNote);
     //add note id starting with 0
@@ -43,7 +43,7 @@ app.post("/api/notes", function(req, res) {
     for( let i = 0; i < database.length; i++){
       database[i].id = idKey++;
     }
-    console.log("Updated Database with post: ", database);
+    // console.log("Updated Database with post: ", database);
     //write the updated database var to db.json file
     fs.writeFile("../db/db.json", JSON.stringify(database), function(err){
       if (err) throw err;
