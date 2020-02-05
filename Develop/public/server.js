@@ -38,6 +38,11 @@ app.post("/api/notes", function(req, res) {
     console.log("Parsed database: ", database);
     //pushes newNote to update database
     database.push(newNote);
+    //add note id starting with 0
+    let idKey = 0
+    for( let i = 0; i < database.length; i++){
+      database[i].id = idKey++;
+    }
     console.log("Updated Database with post: ", database);
     //write the updated database var to db.json file
     fs.writeFile("../db/db.json", JSON.stringify(database), function(err){
