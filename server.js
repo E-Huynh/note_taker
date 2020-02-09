@@ -10,7 +10,7 @@ var PORT = process.env.PORT || 3000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 //HTML routes
 app.get("/", function(req, res) {
@@ -48,7 +48,7 @@ app.post("/api/notes", function(req, res) {
     //pushes newNote to update database
     database.push(newNote);
     //add note id starting with 0
-    let idKey = 0
+    let idKey = 1
     for( let i = 0; i < database.length; i++){
       database[i].id = idKey++;
     }
