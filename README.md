@@ -21,6 +21,8 @@ Users can enter a note title and text and clicking the save icon to store the no
   * Click the save icon
   ### Delete note
   * Click on the delete icon next to the note
+  ### View note
+  * Click on any note to view it
 ## Techonologies
   * [Express](https://expressjs.com/)
   * [NPM File System](https://nodejs.org/api/fs.html)
