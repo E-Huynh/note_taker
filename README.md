@@ -1,5 +1,5 @@
 # Note Taker
-[Deployed Link](https://e-huynh-note-taker.herokuapp.com/)
+[Deployed Link](https://secure-waters-63965.herokuapp.com/)
 
 [Github Repo](https://github.com/E-Huynh/note_taker)
 
