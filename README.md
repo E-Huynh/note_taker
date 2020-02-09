@@ -30,6 +30,8 @@ Users can enter a note title and text and clicking the save icon to store the no
   * CSS
   * Jquery
   * Ajax API Calls
-## Known Bugs
-## Challenges
+## Challenges & Accomplishments
+One of the major challenges of this application was determining how to handle the db.json file that stores the notes. I was inclined to keep the notes stored in the server.js file but thought that it would make more sense to keep it as a separate file for ease of reading. This meant that I needed to use FS to read and write to the db.json while using JSON.parse and JSON.stringify to maining proper types.
+Another challenge I overcame was troubleshooting the CSS styles and Jquery for notes.html. These files did not appear to apply to the notes.html page. With the help of my peers, TAs and professor, we were able to track the error through the network tab of Chrome's inspector and determine it was not able to load these files. I resolved this by having express target and load these files explicitly.
 ## Images
+
