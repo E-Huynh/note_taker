@@ -9,7 +9,7 @@ Erik.W.Huynh@Gmail.com
 
 [LinkedIn](https://www.linkedin.com/in/erik-huynh-228321196/)
 
-[Portfolio](https://e-huynh.github.io/updated_portfolio/)
+[Portfolio](https://e-huynh.github.io/portfolio-gram/)
 
 ## Project Description
 Note taker is a handy app that allows a user to take, store, and delete notes on the the go. Easily allowing a user to track notes helps to keep organization and task management. Notes will be stored on the cloud for easy access from anywhere.
